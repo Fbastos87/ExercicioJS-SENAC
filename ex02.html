@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS 01</title>
+</head>
+<body>  
+    <form>
+        <h1>Conversor de temperatura</h1>
+        <label><h3>Informa o tipo de temperatura:  </h3> </label>
+        <input type="radio" name="temperatura" class="temp" value="Celsius">
+        <label for="Celsius">Celsius</label>
+        <input type="radio" name="temperatura" class="temp" value="Fahrenheit">
+        <label for="Fahrenheit">Fahrenheit</label>
+        <label><h3>Informa o valor da temperatura: </h3> </label>
+        <input type="text" id="valorTemperatura">
+        <button type="button" onclick="converterTemperatura()">Converter</button>
+            
+            <div id="resposta"></div> 
+
+    </form>
+
+    <script>
+                       
+        function converterTemperatura(){
+            var temperatura = document.querySelector('input[name="temperatura"]:checked').value;
+            var valor = parseFloat(document.getElementById("valorTemperatura").value);
+                        
+            if (temperatura == "Celsius"){
+                document.getElementById('resposta').innerHTML  = 'Resposta: '+((valor* 9 / 5) + 32) + ' graus Fahrenheit.' ;
+            }if (temperatura == "Fahrenheit") {
+                document.getElementById('resposta').innerHTML = 'Resposta: '+((valor - 32)* 5/9)+ ' graus Celsius.' ;
+            }
+            
+        }
+
+
+
+     
+    </script>
+    
+</body>
+</html>
