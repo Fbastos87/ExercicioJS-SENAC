@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS 03</title>
+</head>
+<body>  
+    <form>
+        <h1>Programa para informar quantas lampadas devem possuir um comodo:</h1>
+        <label><h2> Informa as medidas do seu comodo:</h2> </label>
+        <label><h3> Largura: </h3>  </label>
+        <input type="text" id="largura">
+        <label><h3> Comprimento: </h3>  </label>
+        <input type="text" id="Comprimento">
+        <label><h2> Informa a potencia da lampada:</h2> </label>
+        <input type="text" id="potencia">
+        <button type="button" onclick="calculoArea()">Calcular</button>
+            
+            <div id="resposta"></div> 
+
+    </form>
+
+    <script>
+                      
+        function calculoArea(){
+            var largura = parseFloat(document.getElementById('largura').value);
+            var comprimento = parseFloat(document.getElementById('comprimento').value);
+            var potencia = parseFloat(document.getElementById('potencia').value);
+            var area = largura * comprimento ; 
+            var calculo = area / 
+            document.getElementById('resposta').innerHTML  = 'Resposta: '+calculo;
+        }
+
+
+
+     
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS 05</title>
+</head>
+<body>  
+        <div>
+            <P>Um motorista de táxi deseja calcular o rendimento de seu carro na praça. Sabendo-se que o preço do combustível é de R$ 4,87, escreva um programa para ler: 
+                a marcação do odômetro (Km) no início do dia, a marcação (Km) no final do dia, 
+                o número de litros de combustível gasto e o valor total (R$) recebido dos passageiros. Calcular e escrever: a média do consumo em Km/L e o lucro (líquido) do dia. </pf>
+        </div>
+    <form>
+        <label><h3>Informe valor inicial de km </h3> </label>
+        <input type="number" id="inicioKm" min="1" max="99999">
+        <label><h3>Informe valor final de km</h3></label>
+        <input type="number" id="fimKm" min="1" max="99999">
+        <label><h3>Informe quantidade de litros de combustivel consumida:</h3></label>
+        <input type="number" id="litroCombustivel" min="1" max="99999">
+        <label><h3>Informe valor total recebido</h3></label>
+        <input type="text" id="valorRecebido" min="1" max="99999">
+        <button type="button" onclick="calculoConsumo()">Calcular</button>
+            
+            
+    </form>
+        <div id="primeiraResposta"></div> 
+        <div id="segundaResposta"></div> 
+    <script>
+        const combustivel= 4.87;
+
+               
+        function calculoConsumo(){
+            var inicioKm = parseFloat(document.getElementById('inicioKm').value);
+            var fimKm = parseFloat(document.getElementById('fimKm').value);
+            var litros = parseFloat(document.getElementById('litroCombustivel').value);
+            var valorRecebido = parseFloat(document.getElementById('valorRecebido').value);
+            var calculoKm = fimKm - inicioKm;            
+            var consumo = calculoKm / litros; 
+            var calculoDinheiro = litros * combustivel;
+            var calculoLucro = valorRecebido - calculoDinheiro;
+            document.getElementById('primeiraResposta').innerHTML  = 'Está fazendo '+consumo+'Km/l';
+            if(valorRecebido <= calculoDinheiro ){
+                document.getElementById('segundaResposta').innerHTML  = 'Saldo: R$'+calculoLucro+'</br> Você teve prejuízo. Regule o seu carro.' ;
+            }else{
+                document.getElementById('segundaResposta').innerHTML  = 'Saldo: R$'+calculoLucro+'</br> Você teve lucro. Muito Bom' ;
+            }
+        }
+
+
+
+     
+    </script>
+    
+</body>
+</html>
